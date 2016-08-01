@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>DVSA 2FA Pin generation extension</title>
+    <script src="libs/clipboard.min.js"></script>
+    <script src="libs/jquery-3.1.-.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+    <script src="pinGen.js"></script>
+  </head>
+  <body>
+    <div id="inputDiv">
+      <label for="secret">Your secret:</label>
+      <input id="secret" name="secret" type="password" size="50" placeholder="Enter secret.....">
+      <label for="drift">Drift:</label>
+      <input id="drift" name="drift" type="text" size="3" value="0">
+    </div>
+    <div>
+      <label for="pin">Your pin:</label>
+      <input id="pin" readonly value="0"/>  
+      <button id="copyToClipboard"> >> Clipboard</button>
+    </div>
+  </body>
+</html>
