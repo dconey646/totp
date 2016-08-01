@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>DVSA 2FA Pin generation extension</title>
-    <script src="libs/clipboard.min.js"></script>
-    <script src="libs/jquery-3.1.0.js" crossorigin="anonymous"></script>
+    <script src="../../libs/clipboard.min.js"></script>
+    <script src="../../libs/jquery-3.1.0.js" crossorigin="anonymous"></script>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
@@ -17,7 +17,7 @@
         max-width: 400px;
       }
     </style>
-    <script src="/bundle.js"></script>
+    <script src="../dist/bundle.js"></script>
   </head>
   <body>
     <div id="inputDiv">
@@ -29,8 +29,12 @@
     </div>
     <div>
       <label for="pin">Your pin:</label>
-      <input id="pin" readonly/>  
+      <input id="pin" readonly/> 
       <button id="copyToClipboard"> >> Clipboard</button>
+      <div>
+        <button id="fillPinSignIn" style="display:none">Fill Pin field</button> 
+        <p id="fillPinSignInText" style="display:none">Sign into dev.motdev.org.uk BEFORE clicking this button!</p>
+      </div>
     </div>
   </body>
 </html>

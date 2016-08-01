@@ -34,6 +34,12 @@ $(document).ready(function () {
     update_pin();
   });
 
+  $(document).getElementById("fillPinSignIn").addEventListener("click", function(){
+    var script = "";
+    //Fill in script to inject pin to motdev site
+    chrome.tabs.executeScript({code : script});
+  });
+
   function genPin(secret, drift){
    for(var i = - drift ; i <= drift; ++i ) {
 
@@ -48,6 +54,4 @@ $(document).ready(function () {
     pins.push({ driftIndex : i, pin : pin, current : offset == 0});
   }
 }
-
-document.addEventListener('DOMContentLoaded', update_pin);
 });
