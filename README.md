@@ -7,7 +7,6 @@ Follow the steps closely below and the plugin should work for you:
 1. First clone the repo : git@github.com:dconey646/totp.git - Inside the MOTDEV directory is probably best to keep them all together.
 2. In the directory, run the following command:
       npm install gulp moment speakeasy browserify bower
-   This should install all the necessary dev dependencies.
 3. Once that has finished, run the following command to generate the correct javascript file: browserify app/src/pinGen.js > app/dist/bundle.js
 4. Then open chrome, browse to: chrome://extensions.
 5. Enable developer mode by ticking the box in the top right.
