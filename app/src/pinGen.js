@@ -38,13 +38,9 @@ $(document).ready(function () {
   });
 
   document.getElementById('fillPinSignInButton').addEventListener("click", function(){
-    //if the active tab is the motdev site.
-    //Add in check to parent tab to ensure it is motdev site.
     if(pins != null) {
       var script = "document.getElementById('pin').value = '" + pins[pins.length - 1].pin  + "';";
-      //var script = "console.log(document.getElementById('pin'));";
     }
-    //Fill in script to inject pin to motdev site
     chrome.tabs.executeScript({code : script});
   });
 
