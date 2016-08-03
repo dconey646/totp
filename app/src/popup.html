@@ -1,37 +1,33 @@
 <!doctype html>
 <html>
-  <head>
-    <title>DVSA 2FA Pin generation extension</title>
-    <script src="../../libs/clipboard.min.js"></script>
-    <script src="../../libs/jquery-3.1.0.js" crossorigin="anonymous"></script>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-    <script src="../dist/bundle.js"></script>
-  </head>
-  <body>
-    <div id="inputDiv">
-      <label for="secret">Your secret:</label>
-      <input id="secret" name="secret" type="password" size="50" placeholder="Enter secret.....">
-      <label for="drift">Drift:</label>
-      <input id="drift" name="drift" type="text" size="3" value="0">
-      <div id="pin-stack">
+<head>
+  <title>DVSA 2FA Pin generation extension</title>
+  <script src="../../libs/clipboard.min.js"></script>
+  <script src="../../libs/jquery-3.1.0.js" crossorigin="anonymous"></script>
+  <script src="../dist/bundle.js"></script>
+</head>
+<body>
+  <div id="inputDiv">
+    <label for="serialNum">Serial Number:</label>
+    <input id="serialNum" name="serialNum" type="text" size="50" placeholder="Enter serial number">
+    <label for="secret">Secret:</label>
+    <input id="secret" name="secret" type="password" size="50" placeholder="Enter secret.....">
+    <div>
+      <button id="persistSerialAndSecret" name="persistSerialAndSecret">Save serial number and secret</button> 
+    </div>
+    <div class="dropdown">
+      <select id="serialSecretSelect" name="serialSecretSelect" hidden>
+      </select>
+    </div>
+    <label for="drift">Drift:</label>
+    <input id="drift" name="drift" type="text" size="3" value="0">
+    <div id="pin-stack">
     </div>
     <div>
       <label for="pin">Your pin:</label>
       <input id="pin" readonly/> 
       <div>
-        <button id="fillPinSignInButton" name="fillPinSignInButton">Fill Pin field</button> 
+        <button id="fillPinSignInButton" name="fillPinSignInButton" hidden>Fill Pin field</button> 
       </div>
     </div>
   </body>
