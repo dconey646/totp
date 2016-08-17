@@ -3,7 +3,7 @@
 
 	"name":"DVSA 2FA pin generation",
 	"description":"Extension used to generate a One Time pin for developers using the system",
-	"version":"1.0",
+	"version":"1.1",
 
 	"browser_action": {
 		"default_icon":"/app/images/icon.gif",
