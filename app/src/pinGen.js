@@ -53,6 +53,7 @@ $(document).ready(function () {
     var secret = $secret.val();
 
     var serials = JSON.parse(localStorage.getItem("serials"));
+    console.log(serials);
     var serialSecretObj = '{ "serial": "' + serial + '", "secret":"'+ secret + '"}';
     if(!!serials) {
       serials += "," + serialSecretObj;
@@ -68,6 +69,7 @@ $(document).ready(function () {
 
   function initialDropdownPopulate(){
     var serials = localStorage.getItem("serials");
+    console.log(serials);
     if(serials !== null){
       createSecretOptions(serials);
     }
@@ -77,7 +79,8 @@ $(document).ready(function () {
     console.log(serialSecretJSONData);
     for (var field in serialSecretJSONData) {
       console.log(field);
-         //$('<option value="'+ jsonDataForBrands[field].name +'">' + jsonDataForBrands[field].title + '</option>').appendTo('#serialSecretSelect');
+      console.log(serialSecretJSONData[field]);
+         $('<option value="'+'balrgh">' + serialSecretJSONData[field].serial + '</option>').appendTo('#serialSecretSelect');
     }
     $('#serialSecretSelect').show();
   };
