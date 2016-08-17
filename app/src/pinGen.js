@@ -39,7 +39,7 @@ $(document).ready(function () {
 
   document.getElementById('fillPinSignInButton').addEventListener("click", function(){
     if(pins != null) {
-      var script = "document.getElementById('pin').value = '" + pins[pins.length - 1].pin  + "';";
+      var script = "document.getElementById('pin').value = '" + pins[pins.length - 1].pin.toString()  + "';";
     }
     chrome.tabs.executeScript({code : script});
   });
